@@ -1,0 +1,26 @@
+<template name="containers">
+    <ul>
+        {{# each containers }}
+            <li></li>
+        {{ else }}  
+            <li>No container!</li>
+        {{ /each }} 
+    </ul>
+</template>
+
+<template name="createContainer">
+    <form id="ContainerForm">
+        <h1>Create Container</h1>
+        <div class="formline">
+            <input type="text" id="name" placeholder="Name your Container.">
+        </div>
+
+        <h1>Select Image</h1>
+        <div class="formline">
+            
+        </div>
+        <div class="actions">
+            <input type="submit" value="Create Container">
+        </div>
+    </form>
+</template>

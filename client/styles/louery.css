@@ -1,1 +1,12 @@
-/* CSS declarations go here */
+body { color:#333; padding:0px; margin:0px; font-family: "proxima-nova", "helvetica neue", helvetica; }
+
+form { padding:10px; }
+input { width:100%; }
+
+.formline, .actions { margin-bottom:20px; }
+.formline input { -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; border: 0; border: 2px solid #f1f1f1; display: block; font-size: 24px; padding: 15px; font-weight: 400; }
+.formline input:focus { border-color: #398bce; outline:none; }
+
+.actions input { background: #3cc05e; border: 0; color: #fff; font-size: 24px; padding: 25px 0; font-weight: 300; outline: none; }
+.actions input:hover { background: #38b458; cursor:pointer; }
+
