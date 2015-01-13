@@ -1,6 +1,10 @@
 Router.configure({
+    layoutTemplate: 'layout',
     loadingTemplate: 'loading',
-    notFoundTemplate: 'notFound'
+    notFoundTemplate: 'notFound',
+    waitOn: function() {
+        return Meteor.subscribe('containers');
+    }
 });
 
 Router.route('/', {

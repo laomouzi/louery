@@ -1,7 +1,15 @@
 <template name="containers">
+    <a href="{{ pathFor route='CreateContainer' }}" class="button">Create Container</a>
     <ul>
         {{# each containers }}
-            <li></li>
+            <li>
+                {{ name }} 
+                {{# if completed }}
+                    -- <a href="/destroy" class="destroy">destroy</a>
+                {{ else }} 
+                    <img src="/loading.svg">
+                {{/if}}
+            </li>
         {{ else }}  
             <li>No container!</li>
         {{ /each }} 

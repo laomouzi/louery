@@ -1,7 +1,14 @@
 body { color:#333; padding:0px; margin:0px; font-family: "proxima-nova", "helvetica neue", helvetica; }
 
+a { color: #398bce; outline: none; text-decoration:none; }
+a:hover { color: #2d6ea3; }
+
+
 form { padding:10px; }
 input { width:100%; }
+
+.button { background-color: #7dc374; color: #fff; display: block; font-size: 16px; font-weight: 400; line-height: 44px; margin: 0 auto; text-align: center; width: 145px; }
+.button:hover { background-color: #6db068; color:white; }
 
 .formline, .actions { margin-bottom:20px; }
 .formline input { -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; border: 0; border: 2px solid #f1f1f1; display: block; font-size: 24px; padding: 15px; font-weight: 400; }

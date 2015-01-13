@@ -2,9 +2,14 @@
     <title>louery</title>
 </head>
 
-<template name="layout"></template>
-<template name="home">
+<template name="layout">
     {{> loginButtons }}
+    <div id="Surface">
+        {{ > yield }}
+    </div>
+</template>
+<template name="home">
+    {{ > containers }}
 </template>
 <template name="notFound"></template>
 <template name="loading"></template>
