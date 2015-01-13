@@ -3,9 +3,14 @@ body { color:#333; padding:0px; margin:0px; font-family: "proxima-nova", "helvet
 a { color: #398bce; outline: none; text-decoration:none; }
 a:hover { color: #2d6ea3; }
 
-
 form { padding:10px; }
 input { width:100%; }
+
+ul, li { list-style:none; padding:0px; margin:0px; }
+
+.status { width:20px; height:20px; display: block; float: left; border-radius: 100px; margin-right:10px; }
+.online { background-color:#7dc374; }
+.offline { background-color:#D0D5D0; }
 
 .button { background-color: #7dc374; color: #fff; display: block; font-size: 16px; font-weight: 400; line-height: 44px; margin: 0 auto; text-align: center; width: 145px; }
 .button:hover { background-color: #6db068; color:white; }

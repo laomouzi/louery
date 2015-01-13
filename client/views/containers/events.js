@@ -1,4 +1,12 @@
 Template.containers.events({
+    'click .running': function(event, tmpl) {
+        Containers.update(this._id, {
+            $set: {
+                running: !this.running
+            }
+        }); 
+        event.preventDefault(); 
+    },
     'click .destroy': function(event, tmpl) {
         Containers.remove(this._id);
         event.preventDefault();

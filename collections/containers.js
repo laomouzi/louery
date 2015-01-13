@@ -23,10 +23,12 @@ if (Meteor.isServer) {
         // CREATE CONTAINER
         Lxc.create(doc._id).complete(function(err, _id) {
             if (!err) {
-                Containers.update(_id, {
-                    $set: {
-                        completed: true
-                    }
+                Lxc.start(doc._id).complete(function() {
+                    Containers.update(_id, {
+                        $set: {
+                            completed: true
+                        }
+                    });
                 });
             }
         });
