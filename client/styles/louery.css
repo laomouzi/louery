@@ -1,4 +1,4 @@
-body { color:#333; padding:0px; margin:0px; font-family: "proxima-nova", "helvetica neue", helvetica; }
+body { color:#555; padding:0px; margin:0px; font-family: "proxima-nova", "helvetica neue", helvetica; }
 
 a { color: #398bce; outline: none; text-decoration:none; }
 a:hover { color: #2d6ea3; }
@@ -7,6 +7,8 @@ form { padding:10px; }
 input { width:100%; }
 
 ul, li { list-style:none; padding:0px; margin:0px; }
+
+.tac { text-align:center; }
 
 .status { width:20px; height:20px; display: block; float: left; border-radius: 100px; margin-right:10px; }
 .online { background-color:#7dc374; }
@@ -19,6 +21,21 @@ ul, li { list-style:none; padding:0px; margin:0px; }
 .formline input { -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; border: 0; border: 2px solid #f1f1f1; display: block; font-size: 24px; padding: 15px; font-weight: 400; }
 .formline input:focus { border-color: #398bce; outline:none; }
 
-.actions input { background: #3cc05e; border: 0; color: #fff; font-size: 24px; padding: 25px 0; font-weight: 300; outline: none; }
-.actions input:hover { background: #38b458; cursor:pointer; }
+.actions input { background-color: #3cc05e; border: 0; color: #fff; font-size: 24px; padding: 25px 0; font-weight: 300; outline: none; cursor:pointer; }
+.actions input:hover { background-color: #38b458; }
 
+.wrapper { width:950px; margin:auto; }
+
+.containers { overflow:hidden; margin-top:10px; }
+.containers li.container { width: 200px; min-height: 100px; padding: 10px; border: 1px solid rgb(219, 219, 219); border-radius: 3px; float:left; margin-right:10px; margin-bottom:5px; font-size:14px; }
+
+.applications { overflow:hidden; }
+.applications li { float:left; width: 140px; padding:15px; text-align:center; font-weight:bold; cursor:pointer; margin-right:5px; border: 5px solid rgba(204, 204, 204, 0.26); font-size:23px; }
+.applications li input[type='radio'] { width:15px; margin:5px auto; }
+.applications li:hover, .applications li.selected { background-color:#398bce; color:white; }
+
+.loading { position:absolute; }
+
+ul.notifications { width:300px; }
+li.notification div.closeButton { display:none; }
+li.notification { border-radius:0px; } 

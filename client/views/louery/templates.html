@@ -5,11 +5,23 @@
 <template name="layout">
     {{> loginButtons }}
     <div id="Surface">
-        {{ > yield }}
+        {{> notifications }}
+        <div class="wrapper">
+            {{ > yield }}
+        </div>
     </div>
 </template>
+
 <template name="home">
     {{ > containers }}
 </template>
-<template name="notFound"></template>
-<template name="loading"></template>
+
+<template name="loading">
+    <div class="tac">
+        <img src="/loading.svg">
+    </div>
+</template>
+
+<template name="notFound">
+    Not found page!
+</template>

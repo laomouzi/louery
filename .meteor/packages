@@ -15,6 +15,8 @@ matteodem:easy-search
 momentjs:moment
 accounts-password
 accounts-ui
-yasaricli:slugify
 random
+yasaricli:slugify@0.0.1
 yasaricli:lxc
+yasaricli:nginx
+gfk:notifications

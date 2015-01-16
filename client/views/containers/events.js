@@ -1,14 +1,10 @@
 Template.containers.events({
-    'click .running': function(event, tmpl) {
-        Containers.update(this._id, {
-            $set: {
-                running: !this.running
-            }
-        }); 
-        event.preventDefault(); 
-    },
     'click .destroy': function(event, tmpl) {
-        Containers.remove(this._id);
+        var name = this.name;
+        Containers.remove(this._id, function() {
+            // notifications
+            Notifications.success(name + ' removed');
+        });
         event.preventDefault();
     }
 });
@@ -20,6 +16,9 @@ Template.createContainer.events({
         // new Container
         if ($.trim(name)) {
 
+            // notifications
+            Notifications.info(name + ' installation started');
+
             // insert
             Containers.insert({ name: name });
 
@@ -27,5 +26,16 @@ Template.createContainer.events({
             Router.go('Containers');
         }
         event.preventDefault();
-    }
+    },
+
+});
+
+Template.applications.events({
+    'click .applications li': function(event, tmpl) {
+        var current = $(event.currentTarget);
+
+        // current selected 
+        tmpl.$('li').removeClass('selected');
+        current.addClass('selected');
+    } 
 });
