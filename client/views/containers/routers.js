@@ -5,5 +5,8 @@ Router.route('/containers', {
 
 Router.route('/containers/create', {
     name: 'CreateContainer',
-    template: 'createContainer'
+    template: 'createContainer',
+    waitOn: function() {
+        return Meteor.subscribe('applications');
+    }
 });

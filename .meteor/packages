@@ -17,6 +17,6 @@ accounts-password
 accounts-ui
 random
 yasaricli:slugify@0.0.1
-yasaricli:lxc
 yasaricli:nginx
 gfk:notifications
+yasaricli:lxc

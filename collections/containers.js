@@ -38,6 +38,9 @@ if (Meteor.isServer) {
                         Lxc.info(doc._id).complete(function(info) {
                             if (_.has(info, 'ip')) {
 
+                                // clear interval
+                                Meteor.clearInterval(found);
+
                                 // update container
                                 Containers.update(_id, {
                                     $set: _.extend({ completed: true }, _.omit(info, 'name'))
@@ -62,8 +65,14 @@ if (Meteor.isServer) {
                                     fs.writeFile(sitesEnabledPath + domain, conf.toString());
                                 });
 
-                                // clear interval
-                                Meteor.clearInterval(found);
+                                // install application
+                                if (doc.application) {
+
+                                    // run application
+                                    Lxc.attach(_id, 'sudo bash /var/apps/' + doc.application.name + '/run').complete(function(err) { 
+                                        console.log(err) 
+                                    }); 
+                                }
                             }
                         });
                     }, 500);

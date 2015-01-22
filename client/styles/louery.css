@@ -9,6 +9,7 @@ input { width:100%; }
 ul, li { list-style:none; padding:0px; margin:0px; }
 
 .tac { text-align:center; }
+.mt10 { margin-top:10px!important; }
 
 .status { width:20px; height:20px; display: block; float: left; border-radius: 100px; margin-right:10px; }
 .online { background-color:#7dc374; }
@@ -16,6 +17,9 @@ ul, li { list-style:none; padding:0px; margin:0px; }
 
 .button { background-color: #7dc374; color: #fff; display: block; font-size: 16px; font-weight: 400; line-height: 44px; margin: 0 auto; text-align: center; width: 145px; }
 .button:hover { background-color: #6db068; color:white; }
+
+.button.destroy { background-color:#B33737; }
+.button.destroy:hover { background-color:#981C1C; }
 
 .formline, .actions { margin-bottom:20px; }
 .formline input { -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; border: 0; border: 2px solid #f1f1f1; display: block; font-size: 24px; padding: 15px; font-weight: 400; }
@@ -29,10 +33,10 @@ ul, li { list-style:none; padding:0px; margin:0px; }
 .containers { overflow:hidden; margin-top:10px; }
 .containers li.container { width: 200px; min-height: 100px; padding: 10px; border: 1px solid rgb(219, 219, 219); border-radius: 3px; float:left; margin-right:10px; margin-bottom:5px; font-size:14px; }
 
-.applications { overflow:hidden; }
-.applications li { float:left; width: 140px; padding:15px; text-align:center; font-weight:bold; cursor:pointer; margin-right:5px; border: 5px solid rgba(204, 204, 204, 0.26); font-size:23px; }
-.applications li input[type='radio'] { width:15px; margin:5px auto; }
-.applications li:hover, .applications li.selected { background-color:#398bce; color:white; }
+#Applications { overflow:hidden; }
+#Applications li { float:left; width: 140px; padding:15px; text-align:center; font-weight:bold; cursor:pointer; margin-right:5px; border: 5px solid rgba(204, 204, 204, 0.26); font-size:23px; }
+#Applications li input[type='radio'] { width:15px; margin:5px auto; }
+#Applications li:hover, #Applications li.selected { background-color:#398bce; color:white; }
 
 .loading { position:absolute; }
 

@@ -1,41 +1,44 @@
 Template.containers.events({
     'click .destroy': function(event, tmpl) {
-        var name = this.name;
-        Containers.remove(this._id, function() {
-            // notifications
-            Notifications.success(name + ' removed');
-        });
+        Containers.remove(this._id);
         event.preventDefault();
     }
 });
 
 Template.createContainer.events({
     'submit #ContainerForm': function(event, tmpl) {
-        var name = tmpl.find('#name').value;
+        var name = tmpl.find('#name').value,
+            selectedApp = $('.selected').get(0),
+            application = selectedApp ? Blaze.getData(selectedApp) : false;
 
-        // new Container
-        if ($.trim(name)) {
+        if (application) {
+            if ($.trim(name)) {
 
-            // notifications
-            Notifications.info(name + ' installation started');
+                // notifications
+                Notifications.info(name + ' installation started');
 
-            // insert
-            Containers.insert({ name: name });
+                // insert
+                Containers.insert({ 
+                    name: name,
+                    application: _.omit(application, '_id')
+                });
 
-            // created success and not error then go to Containers page.
-            Router.go('Containers');
+                // created success and not error then go to Containers page.
+                Router.go('Containers');
+            }
+        } else {
+            Notifications.error('Please select application');
         }
         event.preventDefault();
-    },
-
+    }
 });
 
 Template.applications.events({
-    'click .applications li': function(event, tmpl) {
+    'click #Applications li': function(event, t) {
         var current = $(event.currentTarget);
 
-        // current selected 
-        tmpl.$('li').removeClass('selected');
+        // remove all selecteds and select current application
+        t.$('li').removeClass('selected');
         current.addClass('selected');
-    } 
+    }
 });

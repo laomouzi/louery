@@ -4,7 +4,8 @@
         {{# each containers }}
             <li class="container">
                 {{# if completed }}
-                    {{ name }} <b>({{ _id }})</b> <a href="/destroy" class="destroy">destroy</a> 
+                    {{ name }} <b>({{ _id }})</b> 
+                    <a href="/destroy" class="button destroy">destroy</a> 
                 {{ else }} 
                     <div class="tac">
                         <img src="/loading.svg">
@@ -32,11 +33,14 @@
 </template>
 
 <template name="applications">
-    {{ ! TODO: Applications collection each. }}
-    <div class="formline">
-        <h3>Select Application</h3>
-        <ul class="applications">
-            <li>libreboard</li>
-        </ul>
-    </div>
+    {{# if applications.count }}
+        <div class="formline">
+            <h3>Select Application</h3>
+            <ul id="Applications">
+                {{# each applications }} 
+                    <li>{{ name }}</li>
+                {{/each}}
+            </ul>
+        </div>
+    {{/ if }}
 </template>

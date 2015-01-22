@@ -1,0 +1,8 @@
+#!/bin/bash
+
+export PORT=3000
+export MONGO_URL="mongodb://localhost:27017/louery"
+export ROOT_URL="http://louery.com"
+export DISABLE_WEBSOCKETS=true
+
+meteor run
