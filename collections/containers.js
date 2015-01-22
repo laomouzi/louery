@@ -70,7 +70,9 @@ if (Meteor.isServer) {
 
                                     // run application
                                     Lxc.attach(_id, 'sudo bash /var/apps/' + doc.application.name + '/run').complete(function(err) { 
-                                        console.log(err) 
+
+                                        // Nginx reload 
+                                        Nginx.reload();
                                     }); 
                                 }
                             }

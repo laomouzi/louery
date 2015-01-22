@@ -76,5 +76,5 @@ url@1.0.3
 webapp@1.1.6
 webapp-hashing@1.0.2
 yasaricli:lxc@0.0.9
-yasaricli:nginx@0.0.1
+yasaricli:nginx@0.0.2
 yasaricli:slugify@0.0.5
