@@ -2,26 +2,8 @@
     <title>louery</title>
 </head>
 
-<template name="layout">
-    {{> loginButtons }}
-    <div id="Surface">
-        {{> notifications }}
-        <div class="wrapper">
-            {{ > yield }}
-        </div>
-    </div>
-</template>
+<template name="layout"></template>
+<template name="home"></template>
 
-<template name="home">
-    {{ > containers }}
-</template>
-
-<template name="loading">
-    <div class="tac">
-        <img src="/loading.svg">
-    </div>
-</template>
-
-<template name="notFound">
-    Not found page!
-</template>
+<template name="loading"></template>
+<template name="notFound"></template>

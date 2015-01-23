@@ -3,9 +3,3 @@ Template.containers.helpers({
         return Containers.find({ });
     }
 });
-
-Template.applications.helpers({
-    applications: function() {
-        return Applications.find({});
-    }
-});
