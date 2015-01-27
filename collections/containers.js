@@ -16,7 +16,7 @@ Containers.before.insert(function(userId, doc) {
     /*
     *
     * container will begin after the completion of creation.
-    * completed will be updated. 
+    * completed will be updated.
     */
     doc.completed = false;
 });
@@ -69,11 +69,11 @@ if (Meteor.isServer) {
                                 if (doc.application) {
 
                                     // run application
-                                    Lxc.attach(_id, 'sudo bash /var/apps/' + doc.application.name + '/run').complete(function(err) { 
+                                    Lxc.attach(_id, 'sudo bash /var/apps/' + doc.application.name + '/run').complete(function(err) {
 
-                                        // Nginx reload 
+                                        // Nginx reload
                                         Nginx.reload();
-                                    }); 
+                                    });
                                 }
                             }
                         });
@@ -83,7 +83,7 @@ if (Meteor.isServer) {
         });
     });
 
-    // AFTER REMOVE 
+    // AFTER REMOVE
     Containers.after.remove(function(userId, doc) {
 
         // STOP CONTAINER
@@ -92,7 +92,7 @@ if (Meteor.isServer) {
             // DESTROY CONTAINER
             if (!err) {
                 Lxc.destroy(doc._id).complete(function(name) {
-                    
+
                     // remove Nginx file.
                     fs.unlink(sitesEnabledPath + doc._id + '.louery.com');
                 });

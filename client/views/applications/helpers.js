@@ -1,5 +1,5 @@
 Template.applications.helpers({
     applications: function() {
-        return Applications.find({ });
+        return Applications.find({ }, { sort: { sort: 1 }});
     }
 });

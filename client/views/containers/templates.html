@@ -1,2 +1,27 @@
-<template name="containers"></template>
-<template name="createContainer"></template>
+<template name="containers">
+    <a href="{{ pathFor route='CreateContainer' }}" class="btn btn-primary create">Create</a>
+    <ul class="containers">
+        {{# each containers }}
+            <li>{{ _id }}</li>
+        {{ else }}
+            <li class="null">
+                No containers.
+            </li>
+        {{/ each }}
+    </ul>
+</template>
+
+<template name="createContainer">
+    <h2>Add Container</h2>
+    <form id="CreateContainerForm">
+        <div class="formline">
+            <input type="text" id="name" placeholder="Container Name">
+        </div>
+        <div class="formline">
+            {{ > applications }}
+        </div>
+        <div class="formline">
+            <a href="#" class="btn btn-primary create left">Create</a>
+        </div>
+    </form>
+</template>

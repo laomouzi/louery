@@ -2,7 +2,27 @@
     <title>louery</title>
 </head>
 
-<template name="layout"></template>
+<template name="layout">
+    {{ > notifications }}
+    <div id="Header">
+        <div class="wrapper clearfix">
+            <a href="{{ pathFor route='Home' }}" class="logo left">louery</a>
+            <ul class="nav left">
+                <li><a href="/">What is louery ?</a></li>
+                <li><a href="/">Github</a></li>
+                <li><a href="/">Contact</a></li>
+            </ul>
+            {{ > loginButtons }}
+        </div>
+    </div>
+    <div id="Surface">
+        <div class="wrapper clearfix mt20 mb20">
+            {{ > yield }}
+        </div>
+    </div>
+    <div id="Footer"></div>
+</template>
+
 <template name="home"></template>
 
 <template name="loading"></template>

@@ -1,7 +1,15 @@
-Meteor.publish('containers', function() {
-    return Containers.find({ userId: this.userId });
+Meteor.publishComposite('containers', function() {
+    return {
+        find: function() {
+            return Containers.find({ userId: this.userId });
+        }
+    };
 });
 
-Meteor.publish('applications', function() {
-    return Applications.find({});
+Meteor.publishComposite('applications', function() {
+    return {
+        find: function() {
+            return Applications.find({ userId: this.userId });
+        }
+    };
 });

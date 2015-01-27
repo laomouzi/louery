@@ -1,1 +1,11 @@
-<template name="applications"></template>
+<template name="applications">
+    <h3>Select Application</h3>
+    <ul class="applications clearfix">
+        {{# each applications }}
+            <li>
+                <a href="{{ url }}" target="_blank">{{ name }}</a>
+                <p>{{ desc }}</p>
+            </li>
+        {{/ each}}
+    </ul>
+</template>
